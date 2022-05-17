@@ -1,45 +1,48 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import homeLogo from "../../Assets/home-main.svg";
+import myImg from "../../Assets/avatar.png";
 import Particle from "../Particle";
+import Tilt from "react-parallax-tilt";
 import Home2 from "./Home2";
 import Type from "./Type";
 
 function Home() {
   return (
     <section>
-      <Container fluid className="home-section" id="home">
         <Particle />
         <Container className="home-content">
+          <Container
+            fluid
+            className="home-about-section"
+            id="about"
+          ></Container>
           <Row>
             <Col md={7} className="home-header">
-              <h1 style={{ paddingBottom: 15 }} className="heading">
-                Hi There!{" "}
-                <span className="wave" role="img" aria-labelledby="wave">
-                  👋🏻
-                </span>
-              </h1>
+              <h1 style={{ paddingBottom: 15 }} className="heading"></h1>
 
               <h1 className="heading-name">
-                I'M
-                <strong className="main-name"> CHADI AYARI</strong>
+                <strong className="main-name">I'M CHADI AYARI</strong>
+                <br />
+                Freshly graduated Software Engineer
               </h1>
-
+              <p className="home-about-body">
+                <br />I am fluent in classics like My field of Interest's are
+                building new;
+                <br />
+                Whenever possible, I also apply my passion for developing
+                products with
+              </p>
               <div style={{ padding: 50, textAlign: "left" }}>
                 <Type />
               </div>
             </Col>
 
-            <Col md={5} style={{ paddingBottom: 20 }}>
-              <img
-                src={homeLogo}
-                alt="home pic"
-                className="img-fluid"
-                style={{ maxHeight: "450px" }}
-              />
-            </Col>
+            <Col md={4} className="myAvtar">
+            <Tilt>
+              <img src={myImg} className="img-fluid" alt="avatar" />
+            </Tilt>
+          </Col>
           </Row>
-        </Container>
       </Container>
       <Home2 />
     </section>
